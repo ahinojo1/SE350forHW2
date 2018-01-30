@@ -46,7 +46,8 @@ public class OceanExplorer extends Application{
 	}
 		 
     private void loadShipImage(){
-		Image shipImage = new Image("ship.png",50,50,true,true);
+		//Image shipImage = new Image("ship.png",50,50,true,true);
+    	Image shipImage = new Image("file:///F:/GitHub3/SE350forHW2/Homework2/src/profColumbus/ship.png",50,50,true,true);
 		shipImageView = new ImageView(shipImage);
 		shipImageView.setX(oceanMap.getShipLocation().x*scalingFactor);
 		shipImageView.setY(oceanMap.getShipLocation().y*scalingFactor);
