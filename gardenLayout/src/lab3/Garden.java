@@ -26,9 +26,7 @@ public class Garden extends Application{
 		
 		root.getChildren().add(flower.getCircle());
 		
-		Scene scene = new Scene(root, 500,500);
-		scene.setOnMouseDragged(mouseHandler);
-		
+		Scene scene = new Scene(root, 500,500);		
 		
 		primaryStage.setTitle("GardenLayout");
 		primaryStage.setScene(scene);
@@ -37,9 +35,11 @@ public class Garden extends Application{
 		EventHandler<MouseEvent> mouseHandler = new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent mouseEvent) {
+				
 				Point2D clickPoint = new Point2D(mouseEvent.getX(), mouseEvent.getY());
 				String eventName = mouseEvent.getEventType().getName();
 				
+				Point2D lastPosition = new Point2D(clickPoint.getX(),clickPoint.getY()); //not sure
 				switch(eventName) {
 				case("MOUSE_DRAGGED"):
 					if(lastPosition != null) {
@@ -48,11 +48,16 @@ public class Garden extends Application{
 						flower.move(deltaX,deltaY);
 						
 					}
+				case("MOUSE_RELEASED"):
+					
 				break;
 				}
 				lastPosition = clickPoint;
 			}
 		};
+		scene.setOnMouseDragged(mouseHandler);
+		scene.setOnMouseReleased(mouseHandler);
+		scene.setOnMousePressed(mouseHandler);
 	}
 	
 	

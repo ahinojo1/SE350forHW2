@@ -6,6 +6,8 @@ import javafx.scene.shape.Circle;
 
 public class Flower implements GardenInterface{
 	Point2D position;
+	double xCoord = 0;
+	double yCoord = 0;
 	Color color;
 	boolean movable;
 	Circle circle;
@@ -15,8 +17,8 @@ public class Flower implements GardenInterface{
 	}
 	
 	public Flower(Point2D position, Color color, boolean movable) {
-		this.position = position.add(0,0); //not sure
-		this.color = Color.RED;
+		this.position = position.add(xCoord, yCoord); //not sure
+		this.color = color;
 		this.movable = true;
 		
 		circle = new Circle();
@@ -41,7 +43,8 @@ public class Flower implements GardenInterface{
 	@Override
 	public void move(double deltaX, double deltaY) {
 		// TODO Auto-generated method stub
-		
+		circle.setCenterX(circle.getCenterX()+deltaX);
+		circle.setCenterY(circle.getCenterY()+deltaY);
 	}
 
 	
