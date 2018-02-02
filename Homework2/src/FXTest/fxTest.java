@@ -23,7 +23,7 @@ public class fxTest extends Application {
 		ObservableList<Node> theList = root.getChildren();
 		theList.add(myText);
 		
-		Scene scene = new Scene(root, 200,70);
+		Scene scene = new Scene(root, 300,100);
 		
 		primaryStage.setTitle("Somebody");
 		primaryStage.setScene(scene);
