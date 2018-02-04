@@ -1,4 +1,4 @@
-package profColumbus;//
+package profColumbus; //professor's implementation
 
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
