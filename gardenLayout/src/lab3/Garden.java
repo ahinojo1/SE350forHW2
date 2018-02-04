@@ -10,7 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 public class Garden extends Application{
-	
+	public Point2D lastPosition = null;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -39,7 +39,7 @@ public class Garden extends Application{
 				Point2D clickPoint = new Point2D(mouseEvent.getX(), mouseEvent.getY());
 				String eventName = mouseEvent.getEventType().getName();
 				
-				Point2D lastPosition = new Point2D(clickPoint.getX(),clickPoint.getY()); //not sure
+				//Point2D lastPosition = new Point2D(clickPoint.getX(),clickPoint.getY()); //not sure
 				switch(eventName) {
 				case("MOUSE_DRAGGED"):
 					if(lastPosition != null) {
