@@ -24,7 +24,7 @@ public class Flower implements GardenInterface{
 		circle = new Circle();
 		circle.setCenterX(position.getX());
 		circle.setCenterY(position.getY());
-		circle.setRadius(30);
+		circle.setRadius(20);
 		circle.setFill(this.color);
 		circle.setStroke(Color.BLACK);
 		circle.setStrokeWidth(1);

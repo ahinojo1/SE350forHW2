@@ -21,12 +21,14 @@ public class Garden extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Flower flower = new Flower(new Point2D(100,100), Color.RED, true);
-		
+		FlowerBed bed = new FlowerBed();
 		Pane root = new Pane();
 		
+		root.getChildren().add(bed.getShape());
 		root.getChildren().add(flower.getCircle());
 		
-		Scene scene = new Scene(root, 500,500);		
+		Scene scene = new Scene(root, 800,800);
+		scene.setFill(Color.BURLYWOOD);
 		
 		primaryStage.setTitle("GardenLayout");
 		primaryStage.setScene(scene);
@@ -43,6 +45,7 @@ public class Garden extends Application{
 				switch(eventName) {
 				case("MOUSE_DRAGGED"):
 					if(lastPosition != null) {
+						//if(lastPosition.getX() > flower.xCoord + )
 						double deltaX = clickPoint.getX()-lastPosition.getX();
 						double deltaY = clickPoint.getY()-lastPosition.getY();
 						flower.move(deltaX,deltaY);
