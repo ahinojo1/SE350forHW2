@@ -6,8 +6,8 @@ import javafx.scene.shape.Rectangle;
 
 public class FlowerBed implements GardenInterface{
 	Point2D position;
-	double xCoord = 0;
-	double yCoord = 0;
+	double xCoord = 50;
+	double yCoord = 50;
 	Color color;
 	boolean movable;
 	Rectangle shape;
@@ -27,8 +27,8 @@ public class FlowerBed implements GardenInterface{
 	public void draw() {
 		// TODO Auto-generated method stub
 		shape = new Rectangle();
-		shape.setX(50);
-		shape.setY(50);
+		shape.setX(xCoord);
+		shape.setY(yCoord);
 		shape.setHeight(200);
 		shape.setWidth(100);
 		shape.setFill(Color.DARKGREEN);
