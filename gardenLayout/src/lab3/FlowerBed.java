@@ -1,5 +1,8 @@
 package lab3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -11,12 +14,19 @@ public class FlowerBed implements GardenInterface{
 	Color color;
 	boolean movable;
 	Rectangle shape;
-	
+	List<Flower> group = new ArrayList<Flower>();
 	
 	public FlowerBed() {
 		draw();
 	}
 	
+	public void add() {
+		
+	}
+	
+	public void remove() {
+		
+	}
 	@Override
 	public void move(double deltaX, double deltaY) {
 		// TODO Auto-generated method stub
