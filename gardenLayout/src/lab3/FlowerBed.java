@@ -14,14 +14,14 @@ public class FlowerBed implements GardenInterface{
 	Color color;
 	boolean movable;
 	Rectangle shape;
-	List<Flower> group = new ArrayList<Flower>();
+	List<GardenInterface> group = new ArrayList<GardenInterface>();
 	
 	public FlowerBed() {
 		draw();
 	}
 	
-	public void add() {
-		
+	public void add(GardenInterface g) {
+		//group.
 	}
 	
 	public void remove() {
