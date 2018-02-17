@@ -1,6 +1,6 @@
 package lab3;
 
-public interface GardenInterface {
+public interface Component {
 	public void move(double deltaX, double deltaY);
 	public void draw();
 }

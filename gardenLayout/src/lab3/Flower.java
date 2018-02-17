@@ -4,7 +4,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class Flower implements GardenInterface{
+public class Flower implements Component{
 	Point2D position;
 	double xCoord = 0;
 	double yCoord = 0;
@@ -24,7 +24,7 @@ public class Flower implements GardenInterface{
 		circle = new Circle();
 		circle.setCenterX(position.getX());
 		circle.setCenterY(position.getY());
-		circle.setRadius(20);
+		circle.setRadius(10);
 		circle.setFill(this.color);
 		circle.setStroke(Color.BLACK);
 		circle.setStrokeWidth(1);

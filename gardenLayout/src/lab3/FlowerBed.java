@@ -3,14 +3,17 @@ package lab3;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class FlowerBed implements GardenInterface{
+public class FlowerBed implements Component{
 	Point2D position;
 	double xCoord = 50;
 	double yCoord = 50;
+	Point2D lastPosition = null;
 	Color color;
 	boolean movable;
 	Rectangle shape;
@@ -20,16 +23,38 @@ public class FlowerBed implements GardenInterface{
 		draw();
 	}
 	
-	public void add() {
-		
+	public void add(Flower f) {
+		group.add(f);
 	}
 	
-	public void remove() {
-		
+	public void remove(Flower f) {
+		group.remove(f);
 	}
 	@Override
 	public void move(double deltaX, double deltaY) {
 		// TODO Auto-generated method stub
+		EventHandler<MouseEvent> mouseHandler = new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent mouseEvent) {
+				// TODO Auto-generated method stub
+				Point2D clickPoint = new Point2D(mouseEvent.getX(), mouseEvent.getY());
+				Point2D releasePoint = new Point2D(mouseEvent.getX(), mouseEvent.getY());
+				String eventName = mouseEvent.getEventType().getName();
+				
+				switch(eventName) {
+				case("MOUSE_PRESSED"):
+					if(lastPosition != null) {
+						//if(lastPosition.getX() > flower.xCoord + )
+						double deltaX = clickPoint.getX()-lastPosition.getX();
+						double deltaY = clickPoint.getY()-lastPosition.getY();
+						shape.setX(shape.getX()+deltaX);
+						shape.setY(shape.getY()+deltaY);
+						
+					}
+				}
+			}
+		};
 		
 	}
 
@@ -47,6 +72,14 @@ public class FlowerBed implements GardenInterface{
 	
 	public Rectangle getShape() {
 		return this.shape;
+	}
+	
+	public double getX() {
+		return xCoord;
+	}
+	
+	public double getY() {
+		return yCoord;
 	}
 
 }
