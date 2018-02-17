@@ -17,14 +17,19 @@ public class FlowerBed implements Component{
 	Color color;
 	boolean movable;
 	Rectangle shape;
-	List<Flower> group = new ArrayList<Flower>();
+	List<GardenInterface> group = new ArrayList<GardenInterface>();
 	
 	public FlowerBed() {
 		draw();
 	}
 	
+<<<<<<< HEAD
 	public void add(Flower f) {
 		group.add(f);
+=======
+	public void add(GardenInterface g) {
+		//group.
+>>>>>>> 2239595d9887e725844803523f5e491e46873ab6
 	}
 	
 	public void remove(Flower f) {
